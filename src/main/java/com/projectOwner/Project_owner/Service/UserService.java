@@ -16,7 +16,7 @@ public class UserService {
     @Autowired
 
     public List<UserDto> getAllData(){
-        List<User> users = userRepo.findAll();
+        List<User> users = userRepo.findUsers();
         List<UserDto> userDtos = new ArrayList<>();
         for (User user: users){
             UserDto userDto = new UserDto();
@@ -37,6 +37,14 @@ public class UserService {
             userRepo.save(user);
             return userDto;
         }
+        //null can be returned
+    }
+
+    public UserDto updateData(UserDto userDto){
+            User user = new User();
+            mapToEntity(userDto,user);
+            userRepo.save(user);
+            return userDto;
         //null can be returned
     }
 

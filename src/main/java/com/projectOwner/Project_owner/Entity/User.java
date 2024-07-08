@@ -2,8 +2,6 @@ package com.projectOwner.Project_owner.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity

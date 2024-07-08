@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "user")
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:8081", allowCredentials = "true")
 public class UserController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class UserController {
 
     @PutMapping()
     public ResponseEntity<UserDto> putProject(@RequestBody UserDto userDto){
-        return ResponseEntity.ok(service.saveData(userDto));
+        return ResponseEntity.ok(service.updateData(userDto));
     }
 
     @DeleteMapping("/{id}")

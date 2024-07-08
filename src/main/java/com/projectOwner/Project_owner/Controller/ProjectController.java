@@ -5,23 +5,10 @@ import com.projectOwner.Project_owner.DTO.SearchDateStart;
 import com.projectOwner.Project_owner.Service.JasperExportService;
 import com.projectOwner.Project_owner.Service.ProjectService;
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "project")
@@ -81,7 +68,7 @@ public class ProjectController {
 
     @GetMapping("/report/{id}")
     public @ResponseBody byte[] reportExport(@PathVariable("id") Long id) throws JRException, IOException {
-        String format = "pdf";
+        String format = "xlsx";
         return exportService.ExportReportProject(format, id);
     }
 

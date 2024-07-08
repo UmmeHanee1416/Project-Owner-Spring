@@ -1,6 +1,5 @@
 package com.projectOwner.Project_owner.Repository;
 
-import com.projectOwner.Project_owner.DTO.ProjectDto;
 import com.projectOwner.Project_owner.Entity.Project;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
