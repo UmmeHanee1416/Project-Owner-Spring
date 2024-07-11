@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "project")
-@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:8081", allowCredentials = "true")
 public class ProjectController {
 
     @Autowired
@@ -68,7 +68,7 @@ public class ProjectController {
 
     @GetMapping("/report/{id}")
     public @ResponseBody byte[] reportExport(@PathVariable("id") Long id) throws JRException, IOException {
-        String format = "xlsx";
+        String format = "pdf";
         return exportService.ExportReportProject(format, id);
     }
 

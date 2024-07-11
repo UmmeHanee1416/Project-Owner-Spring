@@ -28,9 +28,9 @@ public class JasperExportService {
         Map<String, Object> map = new HashMap<>();
         map.put("id", id);
         JasperPrint print = JasperFillManager.fillReport(jasperReport,map,dataSource);
-        if (format.equalsIgnoreCase("xlsx")){
-            JasperExportManager.exportReportToPdfFile(print,"C:\\Users\\ZAHID\\Desktop\\jasper\\project-report.xlsx");
+        if (format.equalsIgnoreCase("pdf")){
+            JasperExportManager.exportReportToPdfFile(print,"C:\\Users\\ZAHID\\Desktop\\jasper\\project-report.pdf");
         }
-        return Files.readAllBytes(Paths.get("C:\\Users\\ZAHID\\Desktop\\jasper\\project-report.xlsx"));
+        return Files.readAllBytes(Paths.get("C:\\Users\\ZAHID\\Desktop\\jasper\\project-report.pdf"));
     }
 }
